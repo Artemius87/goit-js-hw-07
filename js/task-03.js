@@ -14,19 +14,16 @@ const images = [
 ];
 
 const galleryRef = document.querySelector("#gallery");
-console.log(galleryRef);
+galleryRef.classList.add("js-gallery");
 
-const createGallery = (arr) => {
-  const listArr = arr.map((el) => {
-    const li = document.createElement("li");
-    const image = document.createElement("img");
-    li.append(image);
-    console.dir("image :>> ", image);
-    li.append(image);
-    return li;
-  });
+images.forEach((el) => {
+  const liRef = document.createElement("li");
+  const imageRef = document.createElement("img");
+  const url = el.url;
+  const alt = el.alt;
 
-  galleryRef.append(...listArr);
-};
-
-createGallery(images);
+  imageRef.setAttribute("src", url);
+  imageRef.setAttribute("alt", alt);
+  liRef.append(imageRef);
+  galleryRef.append(liRef);
+});
