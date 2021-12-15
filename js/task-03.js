@@ -18,12 +18,12 @@ galleryRef.classList.add("js-gallery");
 
 images.forEach((el) => {
   const liRef = document.createElement("li");
-  const imageRef = document.createElement("img");
-  const url = el.url;
-  const alt = el.alt;
+  const imgRef = document.createElement("img");
 
-  imageRef.setAttribute("src", url);
-  imageRef.setAttribute("alt", alt);
-  liRef.append(imageRef);
+  const urlRef = el.url;
+  const altRef = el.alt;
+  imgRef.setAttribute("src", urlRef);
+  imgRef.setAttribute("alt", altRef);
+  liRef.append(imgRef);
   galleryRef.append(liRef);
 });
